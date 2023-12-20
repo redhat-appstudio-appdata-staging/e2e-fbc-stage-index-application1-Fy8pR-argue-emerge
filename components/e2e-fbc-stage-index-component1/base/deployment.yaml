@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: e2e-fbc-stage-index-component1
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: e2e-fbc-stage-index-component1
+    app.kubernetes.io/part-of: e2e-fbc-stage-index-application1
+  name: e2e-fbc-stage-index-component1
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: fbc
+      app.kubernetes.io/instance: e2e-fbc-stage-index-component1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: fbc
+        app.kubernetes.io/instance: e2e-fbc-stage-index-component1
+    spec:
+      containers:
+      - image: quay.io/redhat-user-workloads-stage/dev-release-team-tenant/e2e-fbc-stage-index-application1/e2e-fbc-stage-index-component1@sha256:6d4842f79aec4ce98ca32c2d3dfbd344420b691fa415327ccb56e559d76e5ab8
+        name: fbc
+        ports:
+        - containerPort: 50051
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 512Mi
+status: {}
