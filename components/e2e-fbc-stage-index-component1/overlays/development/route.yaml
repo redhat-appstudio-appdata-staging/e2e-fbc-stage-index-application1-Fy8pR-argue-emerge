@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: e2e-fbc-stage-index-component1
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: e2e-fbc-stage-index-component1
+    app.kubernetes.io/part-of: e2e-fbc-stage-index-application1
+  name: e2e-fbc-stage-index-compoyq6a
+spec:
+  port:
+    targetPort: 50051
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: e2e-fbc-stage-index-component1
+    weight: 100
+status: {}

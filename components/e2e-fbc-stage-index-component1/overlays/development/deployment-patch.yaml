@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: e2e-fbc-stage-index-component1
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-user-workloads-stage/dev-release-team-tenant/e2e-fbc-stage-index-application1/e2e-fbc-stage-index-component1@sha256:6d4842f79aec4ce98ca32c2d3dfbd344420b691fa415327ccb56e559d76e5ab8
+        name: fbc
+        resources: {}
+status: {}
